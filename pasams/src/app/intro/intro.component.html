@@ -1,0 +1,38 @@
+<form (ngSubmit)="f.form.valid && login()" #f="ngForm">
+<input type="text" name="uname" [(ngModel)]="uname" #uuname="ngModel" placeholder="username">
+<input type="password" name="pwd" [(ngModel)]="pwd" #pwdd="ngModel" placeholder="password">
+<input type="submit" value="Submit">
+</form>
+
+
+<h1>Hello {{name}}</h1>
+
+<pre>
+
+<!-- expressions -->
+{{num}}
+{{gender}}
+{{obj.key}}
+{{fruits}}
+
+<!-- operators in expressions --> 
+one :: {{one}}
+two :: {{two}}
+one + two :: {{one + two}}
+one * two :: {{one * two}}
+one / two :: {{one / two}}
+one - two :: {{one - two}}
+one % two :: {{one % two}}
+
+
+4+2 :: {{4+2}}
+4-2 :: {{4-2}}
+4*2 :: {{4*2}}
+4/2 :: {{4/2}}
+4%2 :: {{4%2}}
+
+
+</pre>
+<button [appConfirm] = "second">call me</button>
+
+<my-directives></my-directives>

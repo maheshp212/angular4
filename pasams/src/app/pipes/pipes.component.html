@@ -1,0 +1,28 @@
+<pre>
+pipes
+
+{{name | uppercase}}
+{{name | lowercase}}
+
+{{age|currency}}
+{{age|currency:'INR'}}
+
+{{today}}
+{{today | date}}
+{{today | date:'dd-MM-yyyy'}}
+
+
+{{15| hexa}}
+
+{{2| power:2}}
+</pre>
+
+
+<hotTable [data]="data"
+           (after-change)="afterChange($event)"
+           (after-on-cell-mouse-down)="afterOnCellMouseDown($event)"
+           [colHeaders]="colHeaders"
+           [columns]="columns"
+           [options]="options"
+           [colWidths]="colWidths">
+</hotTable>

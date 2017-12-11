@@ -1,0 +1,76 @@
+<!--
+	# - a local variable
+	* - condtions
+	[] - attributes eg: value
+	()  - events eg: onclick
+	[()] - two way databinding eg:ngModel
+
+ -->
+
+ <!--
+
+ 	* conditional directives
+	[] attribute directives
+	() event directives
+	<qshore>	element directives
+			custom directives
+
+	[()]	two way databinding 
+	#	local variable
+ -->
+
+{{dir}}
+<pre>
+ng-if   -- *ngIf
+ng-repeat -- *ngFor
+ng-bind  //
+
+ng-show
+ng-hide
+[hidden]
+
+ng-model -- [(ngModel)]
+ng-switch -- *ngSwitch
+
+ng-view 
+ng-init // not there
+ng-option
+
+</pre>
+
+{{fruits}}
+
+
+<p *ngIf="one <5";else mahesh> this is if</p>
+
+<p #mahesh> this is elese </p>
+
+<p *ngFor="let fruit of fruits"> {{fruit}}</p>
+
+<ul>
+	<li *ngFor="let fruit of fruits"> {{fruit}}</li>
+</ul>
+
+<select>
+	<option *ngFor="let fruit of fruits"> {{fruit}}</option>
+</select>
+
+<table border="1">
+	<tr *ngFor="let fruit of fruits">
+		<td>{{fruit}} </td>
+	</tr>
+</table>
+
+<p [hidden]="one < 5"> this is hidden </p>
+
+<p [ngSwitch]="one">
+	<span *ngSwitchCase=12> this is 12</span>
+	<span *ngSwitchCase=14> this is 14</span>
+	<span *ngSwitchCase=16> this is 16</span>
+	<span *ngSwitchCase=18> this is 18</span>
+	<span *ngSwitchCase=120> this is 120</span>
+</p>
+
+<!-- <input type="text" [(ngModel)]="model" >  -->
+
+<button [appConfirm] = "callMe" confirmMessage="do you want to call directivesdfsd?">call me</button>

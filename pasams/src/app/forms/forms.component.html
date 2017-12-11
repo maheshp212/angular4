@@ -1,0 +1,123 @@
+Hello
+<!--
+	click
+	hover
+	onmouseover
+	onclick
+	onmouseenter
+	onmouseleave
+	onmouseout
+	onmousemove
+
+	onfocus
+	onblur
+	onkeypress
+	onkeyup
+	onkeydown
+	onchange
+
+	onmousedblclick
+	copy
+	cut
+	paste
+
+-->
+
+
+<p (click)="callMe();"> this is click</p>
+<p (mouseover)="callMe();"> this is mouseover</p>
+<p (mouseout)="callMe();"> this is mouseout</p>
+<p (mouseenter)="callMe();"> this is mouseenter</p>
+<p (mouseleave)="callMe();"> this is mouseleave</p>
+<p (mousemove)="callMe();"> this is mousemove</p>
+
+{{fname}}
+<!-- <pre>
+<input type="text" name="fname" [(ngModel)]="fname" #firstname (focus)="callMe();" placeholder="focus">
+
+<input type="text" name="fname" [(ngModel)]="fname" #lname (blur)="callMe();" placeholder="blur">
+
+<input type="text" name="fname" [(ngModel)]="fname" #gname (copy)="callMe();" placeholder="copy">
+
+<input type="text" name="fname" [(ngModel)]="fname" #asdf (cut)="callMe();" placeholder="cut">
+
+<input type="text" name="fname" [(ngModel)]="fname" #lkj (paste)="callMe();" placeholder="paste">
+
+<input type="text" name="fname" [(ngModel)]="fname" #lkjkasdf (keyup)="callMe();" placeholder="keyup">
+
+<input type="text" name="fname" [(ngModel)]="fname" #sdf3e (keydown)="callMe();" placeholder="keydown">
+
+<input type="text" name="fname" [(ngModel)]="fname" #dfv (keypress)="callMe();" placeholder="keypress">
+
+<input type="text" name="fname" [(ngModel)]="fname" #dfv (change)="callMe();" placeholder="change">
+
+<input type="text" name="fname" [(ngModel)]="fname" #dfv (click)="callMe();" placeholder="CLICK">
+</pre> -->
+
+
+
+
+
+
+
+
+<!-- 
+
+	form feild / element validations 
+	pristine
+	dirty
+	touched
+	untouched
+	error
+	valid 
+	invalid	
+-->
+
+<form name="login" (ngSubmit)="f.valid && submitFun()" #f="ngForm">
+	<input type="text" name="fname"
+			[(ngModel)]="fname"
+			#firstName="ngModel"
+			placeholder="First Name"
+			[minlength] ="5"
+			[maxlength]="12"
+			required>
+	<input type="text" name="lname" [(ngModel)]="lname" #lastName="ngModel" placeholder="Last Name" >
+	<p *ngIf="f.submitted && firstName.hasError('minlength')"> Please enter min 5 </p>
+
+	<input type="submit" value="SUBMIT">
+</form>
+
+
+<pre>
+	*************form field validations*************
+	pristine :: {{firstName.pristine}}
+	dirty :: {{firstName.dirty}}
+	touched :: {{firstName.touched}}
+	untouched :: {{firstName.untouched}}
+	valid  :: {{firstName.valid}}
+	invalid	:: {{firstName.invalid}}
+
+	minlenght :: {{firstName.hasError('minlength')}}
+	maxlength :: {{firstName.hasError('maxlength')}}
+	required :: {{firstName.hasError('required')}}
+</pre>
+
+
+<pre>
+	************* form Validations*************
+	valid :: {{f.valid}}
+	invalid :: {{f.invalid}}
+	touched :: {{f.touched}}
+	untouched :: {{f.untouched}}
+	dirty :: {{f.dirty}}
+	pristine :: {{f.pristine}}
+	sumbit :: {{f.submitted}}
+	error :: {{f.hasError()}}
+
+</pre>
+
+
+
+
+
+

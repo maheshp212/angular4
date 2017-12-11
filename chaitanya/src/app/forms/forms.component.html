@@ -1,0 +1,145 @@
+Form Pageran
+
+<!--
+text
+password
+checkbox
+radio
+
+number
+tel
+email
+url
+search
+date
+time
+week
+month
+color
+range
+
+submit
+button
+reset
+
+
+textarea
+select
+button {
+	submit
+}
+
+
+Events
+
+onclick
+change
+blur
+focus
+
+mouseup
+mousedown
+mouseenter
+mousemove
+mouseleave
+mouseover
+mouseout
+
+
+keypress
+keydown
+keyup
+
+cut
+copy
+paste
+
+submit
+
+-->
+{{count}}
+<p>asdfasd fas df</p>
+<p>{{callMeText}}</p>
+
+
+<p (mouseenter)="callMe()" style="background-color:tomato;">mouse enter</p>
+<p (mouseleave)="callMe()" style="background-color:tomato;">mouse leav</p>
+<p (mouseover)="callMe()" style="background-color:tomato;">mouse over</p>
+<p (mouseout)="callMe()" style="background-color:tomato;">mouse out</p>
+<p (mousemove)="callMe()" style="background-color:tomato;">mouse move</p>
+<p (mouseup)="callMe()" style="background-color:tomato;">mouse up</p>
+<p (mousedown)="callMe()" style="background-color:tomato;">mouse down</p>
+<p (mouseclick)="callMe()" style="background-color:tomato;">mouse click</p>
+<pre>
+{{inst}}
+{{inst | lowercase}}
+{{inst | uppercase}}
+{{inst | slice:2:5}}
+{{age}}
+{{age | percent}}
+{{age | currency}}
+{{age | currency: 'INR'}}
+
+{{today}}
+{{today | date}}
+{{today | date : 'dd-MM-yy hh:mm:ss'}}
+
+{{2 | exponential:3}}
+
+{{255| hexa}}
+</pre>
+<form method="get" action=""  #myForm=ngForm (ngSubmit)="myForm.valid && submitForm()">
+<br> <input type="text" name="name" [(ngModel)]="name" (click)="callMe()" #uname=ngModel placeholder="User Name" required minlength="5"> {{name}}
+<p style="color:red;" *ngIf="uname.dirty && !uname.valid"> Please enter correct username </p>
+
+<!-- <br> <input type="text" name="name" [(ngModel)]="name" (focus)="callMe()" #uname=ngModel placeholder="User Name focus"> {{name}}
+<br> <input type="text" name="name" [(ngModel)]="name" (blur)="callMe()" #uname=ngModel placeholder="User Name blur"> {{name}}
+<br> <input type="text" name="name" [(ngModel)]="name" (keyup)="callMe()" #uname=ngModel placeholder="User Name keyup"> {{name}}
+<br> <input type="text" name="name" [(ngModel)]="name" (keydown)="callMe()" #uname=ngModel placeholder="User Name keydown"> {{name}}
+<br> <input type="text" name="name" [(ngModel)]="name" (keypress)="callMe()" #uname=ngModel placeholder="User Name keypress"> {{name}}
+<br> <input type="text" name="name" [(ngModel)]="name" (cut)="callMe()" #uname=ngModel placeholder="User Name cut"> {{name}}
+<br> <input type="text" name="name" [(ngModel)]="name" (copy)="callMe()" #uname=ngModel placeholder="User Name copy"> {{name}}
+<br> <input type="text" name="name" [(ngModel)]="name" (paste)="callMe()" #uname=ngModel placeholder="User Name paste"> {{name}}
+<br> <input type="text" name="name" [(ngModel)]="name" (change)="callMe()" #uname=ngModel placeholder="User Name change"> {{name}} -->
+
+<br> <input type="password" name="pwd" [(ngModel)]="pwd" #password=ngModel placeholder="Password"> {{pwd}}
+<br> <input type="email" pattern="[^ @]*@[^ @]*" name="email" [(ngModel)]="email" #mailId=ngModel placeholder="Email" required> {{email}}
+<br> <input type="tel" name="tel" [(ngModel)]="tel" #phone=ngModel placeholder="Telephone">{{tel}}
+<br> <input type="time" name="time" [(ngModel)]="time" #currentTime=ngModel placeholder="time"> {{time}}
+<input type="submit" name="asdf" value=" submit">
+<datalist id="browsers" name="zipcodes" [(ngModel)]="zipcodes" #zipcodess=ngModel>
+
+    <option *ngFor="let zip of dropDown"  data-value="{{zip.pin}}" value="{{zip.state}}"></option>
+</datalist>
+{{zipcodes}}
+
+<pre>
+Form
+
+valid :: {{myForm.valid}}
+invalid :: {{myForm.invalid}}
+dirty :: {{myForm.dirty}}
+pristine :: {{myForm.pristine}}
+submitted :: {{myForm.submitted}}
+
+user name input states
+
+valid :: {{uname.valid}}
+invalid :: {{uname.invalid}}
+dirty :: {{uname.dirty}}
+pristine :: {{uname.pristine}}
+touched :: {{uname.touched}}
+untouched :: {{uname.untouched}}
+
+
+Email input states
+
+valid :: {{mailId.valid}}
+invalid :: {{mailId.invalid}}
+dirty :: {{mailId.dirty}}
+pristine :: {{mailId.pristine}}
+touched :: {{mailId.touched}}
+untouched :: {{mailId.untouched}}
+
+</pre>
+</form>

@@ -1,0 +1,76 @@
+Directives page
+<br>
+feild :: {{age}}
+<!--
+	# - a local variable
+	* - condtions
+	[] - attributes eg: value
+	()  - events eg: onclick
+	[()] - two way databinding eg:ngModel
+
+ -->
+<input type="text" name="age-names" [(ngModel)]="age">
+<br> IF ::
+<p *ngIf="age < 18;else mahesh"> You are an adult </p>
+<ng-template #mahesh> else statement got executed</ng-template>
+
+<br> Hidden ::
+<p [hidden]="age < 18"> You are an hidden adult </p>
+
+### for loop
+<div *ngFor="let fruit of fruits"> {{fruit}}</div>
+
+<ul>
+	<li *ngFor="let fruit of fruits"> {{fruit}}</li>
+</ul>
+
+<select>
+	<option>Select</option>
+	<option *ngFor="let fruit of fruits"> {{fruit}}</option>
+</select>
+
+<br>
+<br>
+<br>
+<table border="1">
+	<tr *ngFor="let fruit of fruits">
+		<td> {{fruit}}</td>
+	</tr>
+</table>
+
+#######switch
+
+<p [ngSwitch]=age >
+	<b *ngSwitchCase = 23> 23</b>
+	<span *ngSwitchCase = 18> 18</span>
+	<del *ngSwitchCase = 45> 45</del>
+	<i *ngSwitchCase = 35> 35</i>
+	<u *ngSwitchDefault> Default </u>
+</p>
+
+<table border="1">
+	<tr>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Location</th>
+	</tr>
+	<tr *ngFor="let user of users">
+		<td> {{user.name}} </td>
+		<td> {{user.email}} </td>
+		<td> {{user.loc}} </td>
+	</tr>
+</table>
+
+Custom Directive
+<!-- <button type="button" [appConfirm]="visitGoogle" confirmMessag="do you want to go google.com??"> Google.com</button>
+ -->
+<bank-account bank-name="Mahes Bank" account-id="0535"></bank-account>
+
+
+<button type="button" [appConfirm]="respondMe"  confirmMessag="hello how are you??"> Google.com</button>
+<!-- <app-confirm confirmMessag="hello how are you??"></app-confirm> -->
+
+<br>
+<br>
+<br>
+<br>

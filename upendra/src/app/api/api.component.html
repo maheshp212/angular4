@@ -1,0 +1,13 @@
+<!-- <button (click)="fetchUsersList()">Click me to call the api</button> -->
+<table border="1">
+	<tr *ngFor = "let user of userData">
+		<td>{{user.fname}} </td>
+		<td>{{user.lname}} </td>
+		<td>{{user.age}} </td>
+		<td>{{user.email}} </td>
+		<td> <span (click)= "getUser(user.id)">view </span></td>
+
+	</tr>
+</table>
+<br> <br>
+You have clicked on <b>{{singleUser.fname}} {{singleUser.lname}} </b>

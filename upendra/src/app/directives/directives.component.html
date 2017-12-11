@@ -1,0 +1,68 @@
+<div> In-Built Directives of Angular </div>
+
+
+<!--ng If -->
+
+<!-- <p style="" class=" " id="" width="" height="">
+<img src="" width="" height="">
+
+
+<p ng-if>
+<p ng-repeat>
+<p ng-switch>
+
+<p *ngIf>
+<p *ngFor>
+<p [ngSwitch]> -->
+{{age}}
+
+
+<br>
+<p *ngIf="age > 118;else loading;"> if condition got satisfied</p>
+<ng-template #loading>Else</ng-template>
+
+<br>
+<b> Fruits </b>
+<ul>
+	<!-- ; let i = index -->
+	<li *ngFor="let fruit of fruits"> {{i}} -- {{fruit}} </li>
+</ul>
+
+<b> switch </b>
+<div [ngSwitch]= age>
+	<p *ngSwitchCase = 23> thi is 23 </p>
+	<p *ngSwitchCase = 45> thi is 45 </p>
+	<p *ngSwitchCase = 77> thi is 77 </p>
+	<p *ngSwitchDefault> this  is default </p>
+</div>
+
+<button type="button" [appConfirm]="visitWeb" > Google.com</button>
+<button type="button" [appConfirm]="showImage" confirmMessage="Please show my Image" > Show Image</button>
+
+{{showImageCalled}}
+{{imagePath}}
+
+<p *ngIf="showImageCalled">
+	<img src="{{imagePath}}" width="300" height="300">
+</p>
+
+
+<br>
+<input type="text" name="username" [(ngModel)]="username"/>
+<p [style.background-color]="color"> this is my para </p>
+<p [style.backgroundColor]="color"> this is my para </p>
+<p [style.color]="color"> this is my para </p>
+<input type="text" name="asdf" [value]="color">
+
+<!-- doucument.getElementById('asdf').style.backgroundColor
+doucument.getElementById('asdf').value
+ -->{{username}}
+
+
+<!-- 
+{{}} - one way data binding
+[( )] - two way data binding
+* - condititions (for & if)
+[] - attribute
+() - method calling
+ -->

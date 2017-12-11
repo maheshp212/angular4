@@ -1,0 +1,120 @@
+<h1>User Form</h1>
+<pre>
+<b> list of Events </b>
+	blur
+	focus
+
+	click
+	dblclick
+
+	cut
+	copy
+	paste
+
+	keypress
+	keyup
+	keydown
+
+	mousedown
+	mouseup
+	mouseenter
+	mouseleave
+	mousemove
+	mouseover
+
+	today <b>{{today}}</b>
+	date filter<b>{{today | date}}</b>
+	date filter<b>{{today | date:"dd-MM-yy"}}</b>
+
+	{{23 | percent}}
+	{{34 | currency}}
+	{{345 | currency : 'INR'}}
+	{{'qshore technologies' | slice:2:5}}
+
+
+	custome pipe {{2 | exponential:10}}
+
+	mahesh
+	M@he$h
+
+	a -> @
+	s -> $
+</pre>
+
+<p style="background-color:skyblue;" (dblclick)="callMe()"> {{'this is para dblclick' | uppercase}} </p>
+<p style="background-color:skyblue;" (mousedown)="callMe()"> {{'this is para MOUSE DOWN' | lowercase}} </p>
+<p style="background-color:skyblue;" (mouseup)="callMe()"> this is para mouseup </p>
+<p style="background-color:skyblue;" (mouseenter)="callMe()"> this is para mouseenter </p>
+<p style="background-color:skyblue;" (mouseleave)="callMe()"> this is para mouseleave </p>
+<p style="background-color:skyblue;" (mousemove)="callMe()"> this is para mousemove </p>
+<p style="background-color:skyblue;" (mouseover)="callMe()"> this is para mouseover </p>
+	
+<form class="form" (ngSubmit)="myForm.valid && onSubmit()" #myForm=ngForm>
+	<div>
+		<input type="text" name="asdf" onchange="callMe()">
+		<input type="text" name="uname" [(ngModel)]="uname" #username=ngModel required placeholder="User Name" minlength="5" />
+		<p *ngIf="(username.dirty || myForm.submitted) && !username.valid" class="error"> Please enter the valid User Name </p>
+	</div>
+	<div>
+		<input type="text" name="fname" [(ngModel)]="fname" #firstname=ngModel required placeholder="First Name" pattern="[789][0-9]{9}" (change)="callMe()"/>
+	</div>
+	<div>
+		<input type="text" name="lname" [(ngModel)]="lname" #lastname=ngModel placeholder="Last Name"/>
+	</div>
+	<div>
+		<input type="text" name="email" [(ngModel)]="email"  #emails=ngModel placeholder="Blur" (blur)="callMe()"/>
+	</div>
+	<div>
+		<input type="text" name="email" [(ngModel)]="email"  #emails=ngModel placeholder="focus" (focus)="callMe()"/>
+	</div>
+	<div>
+		<input type="text" name="email" [(ngModel)]="email"  #emails=ngModel placeholder="cut"(cut)="callMe()"/>
+	</div>
+	<div>
+		<input type="text" name="email" [(ngModel)]="email"  #emails=ngModel placeholder="copy" (copy)="callMe()"/>
+	</div>
+	<div>
+		<input type="text" name="email" [(ngModel)]="email"  #emails=ngModel placeholder="paste" (paste)="callMe()"/>
+	</div>
+	<div>
+		<input type="text" name="email" [(ngModel)]="email"  #emails=ngModel placeholder="click" (click)="callMe()"/>
+	</div>
+	<div>
+		<input type="text" name="email" [(ngModel)]="email"  #emails=ngModel placeholder="keyup" (keyup)="callMe()"/>
+	</div>
+	<div>
+		<input type="text" name="email" [(ngModel)]="email"  #emails=ngModel placeholder="keydown" (keydown)="callMe()"/>
+	</div>
+	<div>
+		<input type="text" name="email" [(ngModel)]="email"  #emails=ngModel placeholder="key press" (keypress)="callMe()"/>
+	</div>
+	
+
+	<div>
+		<input type="submit" value="Submit"/>
+	</div>
+
+	<div>
+		Form:
+		<br>valid :: {{myForm.valid}}
+		<br>invalid :: {{myForm.invalid}}
+		<br>dirty :: {{myForm.dirty}}
+		<br>pristine :: {{myForm.pristine}}
+		<br>submitted :: {{myForm.submitted}}
+		<br><br>
+
+
+		Input states::
+		<br>valid :: {{username.valid}}
+		<br>invalid :: {{username.invalid}}
+		<br>dirty ::  {{username.dirty}}
+		<br>pristine :: {{username.pristine}}
+		<br>touched :: {{username.touched}}
+		<br>untouched :: {{username.untouched}}
+		<br> value :: {{username.value}}
+
+		<!-- errors -->
+
+	</div>
+</form>
+

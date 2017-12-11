@@ -1,0 +1,15 @@
+<header><h1>Hellos {{name}}</h1></header>
+<nav class="nav">
+<ul class="menu">
+  <li><a [routerLink] = "['/']"> Home </a></li>
+  <!-- <li><a [routerLink] = "['/kiwi']"> Kiwi </a></li> -->
+  <li><a [routerLink] = "['/variables']"> Variables </a></li>
+  <li><a [routerLink] = "['/expr']"> Expr </a></li>
+  <li><a [routerLink] = "['/directives']"> Directives </a></li>
+</ul>
+</nav>
+<section>
+  <router-outlet></router-outlet>
+
+</section>
+<footer> All rights reserverd</footer>
